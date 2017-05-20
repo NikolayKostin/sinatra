@@ -1,0 +1,23 @@
+default: &default
+ host: localhost
+ adapter: postgresql
+ encoding: UTF8
+ username: nik
+ timeout: 5000
+ reaping_frequency: 30
+ pool: 5
+
+development:
+ <<: *default
+ database: sin_dev
+ password: password
+
+test:
+ <<: *default
+ database: sin_test
+ password: password
+
+production:
+ <<: *default
+ database: sin_prod
+ password: password
